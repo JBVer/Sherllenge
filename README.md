@@ -28,14 +28,14 @@ composer install
 # Install the node dependencies:
 npm install
 
-# Create .env from .env.example
-cp .env.example .env
-
 # Create your database.sqlite and run the migrations
 php artisan migrate
 
 # Generate the application key
 php artisan key:generate
+
+# Create .env from .env.example
+cp .env.example .env
 
 # Complete the .env file
 DB_DATABASE=/absolute/path/to/database/database.sqlite
@@ -49,4 +49,4 @@ npm run build
 php artisan serve
 ```
 
-* Access to the app through: localhost:8000
+* Access the app through: localhost:8000
