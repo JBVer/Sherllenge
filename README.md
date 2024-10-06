@@ -22,9 +22,31 @@
 ## Usage
 
 ```shell
-# Within the Project dir; Compile
-make
+# Within the server repo, install Laravel dependencies:
+composer install
 
-# Launch the shell
-./minishell
+# Install the node dependencies:
+npm install
+
+# Create .env from .env.example
+cp .env.example .env
+
+# Create your database.sqlite and run the migrations
+php artisan migrate
+
+# Generate the application key
+php artisan key:generate
+
+# Complete the .env file
+DB_DATABASE=/absolute/path/to/database/database.sqlite
+DB_USERNAME=username
+DB_PASSWORD=strongpassword
+
+# Build the front-end assets
+npm run build
+
+# Start the development server
+php artisan serve
 ```
+
+* Access to the app through: localhost:8000
