@@ -45,4 +45,23 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * automatically create a member when a user is created
+     */
+    protected static function booted()
+    {
+        static::created(function ($user) {
+            $user->member()->create();
+        });
+    }
+
+
+    /**
+     * provides public access to Member instance (1 to 1)
+     */
+    public function member()
+    {
+        return $this->hasOne(Member::class);
+    }
 }
