@@ -12,9 +12,10 @@
 * Basic Laravel application that includes user authentication and CRUD functionality.
 
 ## Project Stack
-* PHP
-* Laravel
-* Laravel Breeze
+* PHP 8.3.12
+* Laravel Framework 11.26.0
+* Mysql 8.0.39
+* Breeze
 * Inertia.js
 * React
 * Vite
@@ -28,19 +29,24 @@ composer install
 # Install the node dependencies:
 npm install
 
-# Create your database.sqlite and run the migrations
+# Create a mysql database if does not exist yet
+sudo systemctl start mysqld
+mysql -u username -p
+CREATE DATABASE DBname;
+EXIT;
+
+# Create and edit the .env file
+cp .env.example .env
+vim .env
+DB_DATABASE=DBname
+DB_USERNAME=username
+DB_PASSWORD=yourpassword
+
+# Generate the database Tables
 php artisan migrate
 
-# Generate the application key
+# Generate the application enc. key
 php artisan key:generate
-
-# Create .env from .env.example
-cp .env.example .env
-
-# Complete the .env file
-DB_DATABASE=/absolute/path/to/database/database.sqlite
-DB_USERNAME=username
-DB_PASSWORD=strongpassword
 
 # Build the front-end assets
 npm run build
