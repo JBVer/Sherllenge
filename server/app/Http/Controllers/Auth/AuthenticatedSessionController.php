@@ -31,6 +31,14 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
+        // Logic to handle / check member access
+        $user = Auth::user();
+        $member = $user->member;
+        if (!$member || $member->access !== 1) {
+            Auth::logout();
+            return redirect()->back()->withErrors(['access' => 'Your account does not have access.']);
+        }
+
         $request->session()->regenerate();
 
         return redirect()->intended(route('dashboard', absolute: false));
