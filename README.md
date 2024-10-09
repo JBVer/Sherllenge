@@ -15,10 +15,8 @@
 * PHP 8.3.12
 * Laravel Framework 11.26.0
 * Mysql 8.0.39
-* Breeze
-* Inertia.js
-* React
-* Vite
+* Breeze Auth
+* React / Vite
 
 ## Usage
 
