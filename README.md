@@ -16,7 +16,8 @@
 * Laravel Framework 11.26.0
 * Mysql 8.0.39
 * Breeze Auth
-* React / Vite
+* React ^18.2.0
+* Vite ^5.4.8
 
 ## Usage
 
