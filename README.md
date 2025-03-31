@@ -9,7 +9,7 @@
 </p>
 
 ## 💡 About the project
-* Basic Laravel application that includes user authentication and CRUD functionality.
+* Very Basic Laravel app: user auth & CRUD.
 
 ## Project Stack
 * PHP 8.3.12
